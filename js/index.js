@@ -40,3 +40,55 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+var navBarElements = document.querySelectorAll('nav a');
+for (let i = 0; i < navBarElements.length; i++) {
+    navBarElements[i].textContent = siteContent["nav"][`nav-item-${i+1}`]
+    navBarElements[i].style.color = 'green';
+}
+var nav = document.querySelector('nav');
+let a = document.createElement('a');
+    a.textContent = 'Visit';
+let b = document.createElement('a');
+b.textContent = 'Create';
+nav.prepend(a)
+nav.prepend(b)
+// CTA
+document.querySelector('.cta-text h1').textContent = siteContent["cta"]['h1'];
+document.querySelector('.cta-text button').textContent = siteContent["cta"]['button'];
+document.querySelector('.cta #cta-img').setAttribute('src', siteContent["cta"]['img-src'])
+
+// Main
+
+document.querySelector('.cta #cta-img').setAttribute('src', siteContent["cta"]['img-src'])
+document.querySelector('.cta #cta-img').setAttribute('src', siteContent["cta"]['img-src'])
+
+var topText = document.querySelectorAll('.main-content .top-content .text-content')
+topText[0].querySelector('h4').textContent = siteContent['main-content']['features-h4']
+topText[0].querySelector('p').textContent = siteContent['main-content']['features-content']
+topText[1].querySelector('h4').textContent = siteContent['main-content']['about-h4']
+topText[1].querySelector('p').textContent = siteContent['main-content']['about-content']
+
+let middle = document.getElementById("middle-img");
+middle.setAttribute('src', siteContent["main-content"]["middle-img-src"])
+
+var bottomText = document.querySelectorAll('.main-content .bottom-content .text-content')
+bottomText[0].querySelector('h4').textContent = siteContent['main-content']['services-h4']
+bottomText[0].querySelector('p').textContent = siteContent['main-content']['services-content']
+bottomText[1].querySelector('h4').textContent = siteContent['main-content']['product-h4']
+bottomText[1].querySelector('p').textContent = siteContent['main-content']['product-content']
+bottomText[2].querySelector('h4').textContent = siteContent['main-content']['vision-h4']
+bottomText[2].querySelector('p').textContent = siteContent['main-content']['vision-content']
+
+const contact = document.querySelector('.contact');
+contact.querySelector('h4').textContent = siteContent['contact']['contact-h4']
+var contactPArray = contact.querySelectorAll('p');
+console.log(contactPArray);
+
+for (let i = 0; i < contactPArray.length; i++) {
+  var keys = Object.keys( siteContent['contact'] );
+  contactPArray[i].textContent = siteContent['contact'][keys[i+1]];
+}
+document.querySelector('footer p').textContent = siteContent['footer']['copyright'];
+
+
